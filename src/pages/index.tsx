@@ -38,7 +38,7 @@ export default function Home() {
               <Button bg={'brand.primary'} color={'gray.100'}>
                 Continue with Google
               </Button>
-              <Input placeholder='Enter email here...' />
+              <Input placeholder='Enter email here...' type='email' />
               <Button variant='secondary'>Continue</Button>
             </Stack>
           </Box>
