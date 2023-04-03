@@ -26,6 +26,14 @@ const colors = Object.freeze({
     primary: '#3155A2',
     accent: '#FFB223',
     secondary: '#191A1D',
+    neutral: { 100: '#f7f7f7', 200: '#ddd', 300: '#eee' },
+  },
+  button: {
+    primary: {
+      main: '#3155A2',
+      hover: '#1B4192',
+    },
+    secondary: '#121212',
   },
 });
 

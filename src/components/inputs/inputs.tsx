@@ -12,7 +12,7 @@ interface Props extends InputProps {
 }
 
 const Input: React.FC<Props> = ({ error, label, ...props }) => {
-  const bg = useColorModeValue('gray.200', 'brand.secondary');
+  const bg = useColorModeValue('brand.neutral.100', 'brand.secondary');
   return (
     <div className={styles.form_control}>
       <label htmlFor={props.name}>{label}</label>
@@ -21,7 +21,7 @@ const Input: React.FC<Props> = ({ error, label, ...props }) => {
         {...props}
         bg={bg}
         border={'none'}
-        _hover={{
+        _active={{
           borderColor: '#FFB223',
         }}
       />
