@@ -1,6 +1,10 @@
 import React, { InputHTMLAttributes } from 'react';
 import styles from '@/styles/Components.module.css';
-import { Input as CustomInput, InputProps } from '@chakra-ui/react';
+import {
+  Input as CustomInput,
+  InputProps,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 interface Props extends InputProps {
   error?: Record<any, string>;
@@ -8,10 +12,19 @@ interface Props extends InputProps {
 }
 
 const Input: React.FC<Props> = ({ error, label, ...props }) => {
+  const bg = useColorModeValue('gray.200', 'brand.secondary');
   return (
     <div className={styles.form_control}>
       <label htmlFor={props.name}>{label}</label>
-      <CustomInput className={styles.input} {...props} />
+      <CustomInput
+        className={styles.input}
+        {...props}
+        bg={bg}
+        border={'none'}
+        _hover={{
+          borderColor: '#FFB223',
+        }}
+      />
       {error ? <div></div> : null}
     </div>
   );

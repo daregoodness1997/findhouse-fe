@@ -3,10 +3,11 @@ import type { AppProps } from 'next/app';
 import { AnimatePresence } from 'framer-motion';
 import { ChakraProvider } from '@chakra-ui/react';
 import Layout from '@/components/layout';
+import theme from '@/theme';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <AnimatePresence mode='wait'>
         <Layout>
           <Component {...pageProps} />

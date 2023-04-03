@@ -1,7 +1,16 @@
-import { Box, Button, Flex, Text, useColorMode } from '@chakra-ui/react';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import {
+  Box,
+  Flex,
+  Text,
+  useColorMode,
+  Icon,
+  IconButton,
+} from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import Button from '../button';
 
 interface Props {}
 
@@ -23,9 +32,13 @@ const TopNav: React.FC<Props> = () => {
         </Flex>
       </Link>
 
-      <Button onClick={toggleColorMode}>
-        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-      </Button>
+      <IconButton
+        aria-label='toggle-switch'
+        onClick={toggleColorMode}
+        borderRadius={24}
+      >
+        {colorMode === 'light' ? <Icon as={MoonIcon} /> : <Icon as={SunIcon} />}
+      </IconButton>
     </Flex>
   );
 };

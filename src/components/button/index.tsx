@@ -2,11 +2,23 @@ import React from 'react';
 import { Button as CustomButton, ButtonProps } from '@chakra-ui/react';
 
 interface Props extends ButtonProps {
-  label: string;
+  children: string | React.ReactNode;
+  variant?: 'primary' | 'secondary';
 }
 
-const Button: React.FC<Props> = ({ label, ...props }) => {
-  return <CustomButton {...props}>{label}</CustomButton>;
+const Button: React.FC<Props> = ({
+  children,
+  variant = 'primary',
+  ...props
+}) => {
+  return (
+    <CustomButton
+      background={variant === 'primary' ? 'brand.primary' : 'gray.100'}
+      {...props}
+    >
+      {children}
+    </CustomButton>
+  );
 };
 
 export default Button;

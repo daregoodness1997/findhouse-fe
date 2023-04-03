@@ -1,9 +1,19 @@
 import Head from 'next/head';
 import Input from '@/components/inputs/inputs';
-import { Box, Grid, Heading, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Grid,
+  Heading,
+  Stack,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import Image from 'next/image';
+import Button from '@/components/button';
 
 export default function Home() {
+  const color = useColorModeValue('gray.500', 'gray.100');
+
   return (
     <>
       <Head>
@@ -14,22 +24,23 @@ export default function Home() {
       </Head>
       <main>
         <Grid placeItems={'center'}>
-          <Box width={320} mt={8}>
+          <Box width={320} mt={16}>
             <Box textAlign={'center'}>
-              <Image
-                src='assets/fh-logo.svg'
-                width={48}
-                height={48}
-                alt='find houselogo'
-                style={{ display: 'block', margin: 'auto' }}
-              />
               <Heading fontSize={'22px'} mt={4}>
                 Welcome to FindHouse
               </Heading>
-              <Text color='#eee'>Login or register with your mail</Text>
+              <Text color={color} fontSize={'14px'}>
+                Login or register with your mail
+              </Text>
             </Box>
 
-            <Input placeholder='Enter email here...' />
+            <Stack my={8} gap={1}>
+              <Button bg={'brand.primary'} color={'gray.100'}>
+                Continue with Google
+              </Button>
+              <Input placeholder='Enter email here...' />
+              <Button variant='secondary'>Continue</Button>
+            </Stack>
           </Box>
         </Grid>
       </main>

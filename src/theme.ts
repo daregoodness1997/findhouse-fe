@@ -12,12 +12,26 @@ const styles = {
   global: (props: StyleFunctionProps) => ({
     body: {
       color: mode('gray.800', 'whiteAlpha.900')(props),
-      bg: mode('gray.900', '#121316')(props),
+      bg: mode('bg.white', 'bg.dark')(props),
     },
   }),
 };
+
+const colors = Object.freeze({
+  bg: {
+    dark: '#121316',
+    white: '#fff',
+  },
+  brand: {
+    primary: '#3155A2',
+    accent: '#FFB223',
+    secondary: '#191A1D',
+  },
+});
+
 const theme = extendTheme({
   config,
+  colors,
   styles,
 });
 
