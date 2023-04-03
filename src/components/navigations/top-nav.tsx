@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Text, useColorMode } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -6,8 +6,9 @@ import React from 'react';
 interface Props {}
 
 const TopNav: React.FC<Props> = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Box sx={{ p: 4 }}>
+    <Flex justifyContent={'space-between'} alignItems={'center'} sx={{ p: 4 }}>
       <Link href='/'>
         <Flex gap={2} alignItems='center'>
           <Image
@@ -21,7 +22,11 @@ const TopNav: React.FC<Props> = () => {
           </Text>
         </Flex>
       </Link>
-    </Box>
+
+      <Button onClick={toggleColorMode}>
+        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+      </Button>
+    </Flex>
   );
 };
 
