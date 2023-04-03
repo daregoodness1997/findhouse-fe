@@ -5,6 +5,7 @@ import { ProductType } from '.';
 import Link from 'next/link';
 import { products } from '@/constants';
 import { useRouter } from 'next/router';
+import { Text } from '@chakra-ui/react';
 
 const ProductDetails = () => {
   const router = useRouter();
@@ -36,7 +37,7 @@ const ProductDetails = () => {
                 </motion.div>
               </Link>
               <motion.div variants={fadeInUp}>
-                <span className='category'>Protein</span>
+                <Text className='category'>Protein</Text>
               </motion.div>
               <motion.h1 variants={fadeInUp}>{product[0]?.name}</motion.h1>
               <motion.p variants={fadeInUp}>{product[0]?.details}</motion.p>

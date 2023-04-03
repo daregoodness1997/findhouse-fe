@@ -37,8 +37,8 @@ const TopNav: React.FC<Props> = () => {
           aria-label='toggle-switch'
           onClick={toggleColorMode}
           borderRadius={24}
-          background='brand.neutral.300'
-          _hover={{ background: 'brand.neutral.200' }}
+          // background='brand.neutral.300'
+          // _hover={{ background: 'brand.neutral.200' }}
         >
           {colorMode === 'light' ? (
             <Icon as={MoonIcon} />
@@ -47,10 +47,8 @@ const TopNav: React.FC<Props> = () => {
           )}
         </IconButton>
 
-        <Button Icon={<MoonIcon />} variant='secondary'>
-          Sign in
-        </Button>
-        <Button Icon={<MoonIcon />}>Create Account</Button>
+        <Button variant='secondary'>Sign in</Button>
+        <Button>Create Account</Button>
       </Flex>
     </Flex>
   );
